@@ -6,7 +6,7 @@ test.describe("Home page with no auth", () => {
   });
 
   test("visual test", async ({ page }) => {
-    await page.waitForLoadState("networkidle")
+    await page.waitForLoadState("networkidle");
     await expect(page).toHaveScreenshot("home-page-no-auth.png", {
       mask: [page.getByTitle("Practice Software Testing - Toolshop")],
     });
@@ -17,7 +17,6 @@ test.describe("Home page with no auth", () => {
   });
 
   test("Validate title", async ({ page }) => {
-    await page.goto("https://practicesoftwaretesting.com/");
     await expect(page).toHaveTitle(
       "Practice Software Testing - Toolshop - v5.0"
     );
